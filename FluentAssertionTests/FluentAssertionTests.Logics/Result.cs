@@ -45,7 +45,7 @@ namespace FluentAssertionTests.Logics
             return result;
         }
 
-        public static Result<T> Failure<T>(string message)
+        public static Result<T> Failure<T>(string property, string message)
         {
             var result = new Result<T>();
 
@@ -54,12 +54,17 @@ namespace FluentAssertionTests.Logics
             {
                 new ErrorMessage()
                 {
-                    PropertyName = string.Empty,
+                    PropertyName = property,
                     Message = message
                 }
             };
 
             return result;
+        }
+
+        public static Result<T> Failure<T>(string message)
+        {
+            return Failure<T>(string.Empty, message);
         }
     }
 

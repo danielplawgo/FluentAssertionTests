@@ -10,5 +10,7 @@ namespace FluentAssertionTests.Logics.Products
     public interface IProductLogic
     {
         Result<Product> GetById(int id);
+
+        Result<Product> Create(Product product);
     }
 }

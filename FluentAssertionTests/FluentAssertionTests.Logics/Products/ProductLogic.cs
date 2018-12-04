@@ -33,5 +33,10 @@ namespace FluentAssertionTests.Logics.Products
 
             return Result.Ok(product);
         }
+
+        public Result<Product> Create(Product product)
+        {
+            return Result.Ok(product);
+        }
     }
 }
